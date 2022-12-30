@@ -9,11 +9,16 @@ const PORT = process.env.PORT || 3000
 const app = express()
 
 // set templating engine
-app.set('views','public')
+
 app.set('view engine','ejs')
 
+
+//initializing middleware to access static flies from public folder
+app.use(express.static('public'))
+
+
 app.get('/',(req,res)=>{
-    res.render('index')
+    res.render('login')
 })
 
 //connect to MongoDB
