@@ -76,7 +76,7 @@ app.post('/signup',(req,res)=>{
             res.status(400).send(err);
         } else {
             passport.authenticate('local')(req, res, () => {
-                res.redirect("/welcome",)
+                res.redirect("/welcome")
             });
         }
     })
