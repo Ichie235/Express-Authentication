@@ -1,0 +1,123 @@
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/4ea6c4d3d9.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Express-Authentication(passport-local)</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+            text-decoration: none;
+            box-sizing: border-box;
+        }
+        header{
+            width: 100%;
+            height: 80px;
+            background-color: green;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0px 100px;
+        }
+        .logo{
+            font-size: 24px;
+            color: aliceblue;
+        }
+        .hamburger{
+            display: none;
+        }
+        .nav-bar ul{
+            display: flex;
+        }
+        .nav-bar ul li a{
+            display: block;
+            color: aliceblue;
+            font-size: 20px;
+            padding: 10px 25px;
+            border-radius: 50px;
+            transition: 0.2s;
+            margin: 0 5px;
+        }
+        .nav-bar ul li a:hover{
+            color: #11101b;
+            background-color: aliceblue;
+        }
+        @media only screen and (max-width: 1320px){
+            header{
+                padding: 0 50px;
+            }
+        }
+        @media only screen and (max-width: 1100px){
+            header{
+                padding: 0 30px;
+            }
+        }
+        @media only screen and (max-width: 900px){
+            .hamburger{
+                display: block;
+                cursor: pointer;
+            }
+            .hamburger .line{
+                width: 30px;
+                height: 4px;
+                background-color: antiquewhite;
+                margin: 6px 0;
+            }
+            .nav-bar{
+                position: absolute;
+                top: 80px;
+                left: 0;
+                right: 0;
+                width: 100vw;
+                height: 0;
+                background-color: green;
+                transform: 0.2s;
+                overflow: hidden;
+            }
+            .nav-bar.active{
+                height: 450px;
+            }
+            .nav-bar ul{
+                display: block;
+                width: fit-content;
+                margin: 80px auto 0 auto;
+                text-align: center;
+                transition: 0.5s;
+                opacity: 0;
+            }
+            .nav-bar.active ul{
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div class="logo">PASSPORT-LOCAL-STRATEGY</div>
+    <div class="hamburger">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+    </div>
+    <nav class="nav-bar">
+        <ul>
+            <li>
+                <a href="/" class="active">Home</a>
+            </li>
+            <li>
+                <a href="/signup">Signup</a>
+            </li>
+            <li>
+                <a href="/login">Login</a>
+            </li>
+            <li>
+                <a href="/welcome">Welcome</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<script src="../js/main.js"></script>
+</body>

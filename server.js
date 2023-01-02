@@ -84,13 +84,18 @@ app.post('/signup',(req,res)=>{
 
 //handle the login
 app.post('/login',passport.authenticate('local',{failureRedirect:'/login'}),(req,res)=>{
+    
     res.redirect('/welcome')
 })
 
 // handles the logout request
 app.post('/logout', (req, res) => {
-    req.logout();
-    res.redirect('/');
+    req.logout((err,data)=>{
+        if(err){
+            console.log(err)
+        }
+        res.redirect('/')
+    })
 });
 
 
